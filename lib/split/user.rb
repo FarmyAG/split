@@ -40,6 +40,10 @@ module Split
       experiment_pairs
     end
 
+    def started?(experiment)
+      !!self[experiment.key]
+    end
+
     private
 
     def keys_without_experiment(keys, experiment_key)

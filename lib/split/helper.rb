@@ -42,6 +42,8 @@ module Split
 
     def finish_experiment(experiment, options = {:reset => true})
       return true if experiment.has_winner?
+      return false unless ab_user.started?(experiment)
+
       should_reset = experiment.resettable? && options[:reset]
       if ab_user[experiment.finished_key] && !should_reset
         return true
