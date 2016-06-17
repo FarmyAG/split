@@ -6,7 +6,7 @@
 
 <% experiment.calc_winning_alternatives %>
 
-<div class="<%= experiment_class %>" data-name="<%= experiment.name %>" data-complete="<%= experiment.has_winner? %>">
+<div class="<%= experiment_class %>" data-name="<%= experiment.name %>" data-complete="<%= experiment.has_winner? %>" style="<%= "display: none" if experiment.has_winner? %>">
   <div class="experiment-header">
     <h2>
       Experiment: <%= experiment.name %>
@@ -86,7 +86,7 @@
           <div class="box-<%=experiment.jstring(goal)%> probability-<%=experiment.jstring(goal)%>">
             <span title="p_winner: <%= round(alternative.p_winner(goal), 3) %>"><%= number_to_percentage(round(alternative.p_winner(goal), 3)) %>%</span>
           </div>
-        </td>        
+        </td>
         <td>
           <% if experiment.has_winner? %>
             <% if experiment.winner.name == alternative.name %>

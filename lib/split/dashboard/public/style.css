@@ -312,8 +312,6 @@ a.button.green:focus, button.green:focus, input[type="submit"].green:focus {
   background:#768E7A;
 }
 
-#filter, #clear-filter {
+#filter {
   padding: 10px;
 }
-
-
