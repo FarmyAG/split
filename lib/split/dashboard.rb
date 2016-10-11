@@ -27,7 +27,8 @@ module Split
       else
         @current_env = "Rack: #{Rack.version}"
       end
-      erb :index
+
+      erb :index, layout: !request.xhr?
     end
 
     post '/experiment' do

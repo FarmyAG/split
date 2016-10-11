@@ -1,7 +1,7 @@
 <% if @experiments.any? %>
   <p class="intro">The list below contains all the registered experiments along with the number of test participants, completed and conversion rate currently in the system.</p>
 
-  <input type="text" placeholder="Begin typing to filter" id="filter" />
+  <input type="text" placeholder="Begin typing to filter" id="filter" value="<%= params[:q] %>" />
   <input type="button" id="toggle-completed" value="Show completed" />
 
   <% @experiments.each do |experiment| %>
